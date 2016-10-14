@@ -137,14 +137,13 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            Boat boat = mBoats.get(position)
-            return PlaceholderFragment.newInstance(position + 1);
+            Boat boat = mBoats.get(position);
+            return BoatFragment.newInstance(boat.getId());
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return mBoats.size();
         }
 
         @Override
