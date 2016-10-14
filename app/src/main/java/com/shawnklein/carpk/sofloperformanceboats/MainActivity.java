@@ -18,7 +18,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<Boat> mBoats;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -134,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            Boat boat = mBoats.get(position)
             return PlaceholderFragment.newInstance(position + 1);
         }
 

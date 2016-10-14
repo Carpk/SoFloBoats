@@ -10,6 +10,7 @@ public class BoatFragment extends Fragment {
 
     public static BoatFragment newInstance(UUID boatId) {
         BoatFragment fragment = new BoatFragment();
+
         return fragment;
     }
 }
