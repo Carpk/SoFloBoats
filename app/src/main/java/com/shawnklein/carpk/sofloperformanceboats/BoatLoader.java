@@ -7,7 +7,7 @@ import java.net.URLConnection;
 
 public class BoatLoader {
 
-    public void createList  {
+    public void createList()  {
         String address = "http://sofloperformanceboats.com/boats";
         String charset = "UTF-8";
 

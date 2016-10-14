@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class BoatListing {
     private ArrayList<Boat> mBoats;
+    private static BoatListing sBoatListing;
 
     private BoatListing(Context appContext) {
         mBoats = new ArrayList<Boat>();
@@ -13,6 +14,13 @@ public class BoatListing {
             b.setTitle("Boat #" + i);
             mBoats.add(b);
         }
+    }
+
+    public static BoatListing get(Context c) {
+        if (sBoatListing == null) {
+            sBoatListing = new BoatListing(c.getApplicationContext());
+        }
+        return sBoatListing;
     }
 
 
