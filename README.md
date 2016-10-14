@@ -1,3 +1,5 @@
 ### SoFloBoats
 
-Android app shows off differant models of boat from a remote URL.
+Android app shows different boat models.
+
+
