@@ -2,6 +2,7 @@ package com.shawnklein.carpk.sofloperformanceboats;
 
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class BoatListing {
     private ArrayList<Boat> mBoats;
@@ -27,5 +28,13 @@ public class BoatListing {
 
     public ArrayList<Boat> getBoats() {
         return mBoats;
+    }
+
+    public Boat getBoat(UUID id) {
+        for (Boat b : mBoats) {
+            if (b.getId().equals(id))
+                return b;
+        }
+        return null;
     }
 }
