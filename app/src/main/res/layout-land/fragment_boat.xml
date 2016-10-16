@@ -17,6 +17,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:contentDescription="This is a boat."
-        android:scaleType="fitStart"/>
+        android:scaleType="centerInside"/>
 
 </LinearLayout>
