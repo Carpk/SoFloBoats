@@ -24,7 +24,11 @@ public class Boat {
     }
 
     public String getUrl() {
-        return "http://images.boats.com/resize/1/67/68/4956768_20150302070821537_1_LARGE.jpg";
+        return mUrl;
+    }
+
+    public void setUrl(String url) {
+        mUrl = url;
     }
 
     public Boat() {

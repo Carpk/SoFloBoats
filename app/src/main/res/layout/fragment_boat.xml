@@ -17,4 +17,11 @@
         android:gravity="center"
         android:text="Hello!, i am fragment_boat" />
 
+    <ImageView
+        android:id="@+id/boat_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hello!, i am fragment_boat" />
+
 </LinearLayout>
