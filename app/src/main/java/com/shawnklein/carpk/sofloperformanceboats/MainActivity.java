@@ -74,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            public void onPageScrollStateChanged(int state) {}
+
+            public void onPageScrolled(int pos, float posOffset, int posOffsetPixels) {}
+
+            public void onPageSelected(int pos) {
+                Boat boat = mBoats.get(pos);
+                if (boat.getTitle() != null) {
+                    setTitle(boat.getTitle());
+                }
+            }
+        });
     }
 
 

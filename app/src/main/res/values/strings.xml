@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Performance Boats</string>
+    <string name="app_name">SoFl Performance Boats</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World</string>
     <string name="this_is_a_boat">This is a boat.</string>
