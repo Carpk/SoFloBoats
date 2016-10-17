@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mViewPager.setOffscreenPageLimit(2);
     }
 
 

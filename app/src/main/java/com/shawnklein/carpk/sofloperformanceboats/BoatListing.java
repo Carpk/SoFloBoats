@@ -31,8 +31,6 @@ public class BoatListing {
         return sBoatListing;
     }
 
-
-
     public ArrayList<Boat> getBoats() {
         return mBoats;
     }
