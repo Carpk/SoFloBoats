@@ -10,10 +10,11 @@ public class BoatListing {
 
     private BoatListing(Context appContext) {
         mBoats = new ArrayList<Boat>();
-        String[] boatArrayUrls = {"http://media.channelblade.com/boat_graphics/dealers/40524/digi55489199_l.jpg",
-                "http://media.channelblade.com/boat_graphics/dealers/40524/digi56183663_l.jpg",
-                "http://media.channelblade.com/boat_graphics/dealers/40524/digi55489191_l.jpg",
-                "http://images.boats.com/resize/1/5/12/4710512_20140521135437105_1_LARGE.jpg"};
+        String[] boatArrayUrls = {"http://sofloperformanceboats.com/sites/default/files/styles/boats_thumbnail/public/DSC_0693.jpg",
+                "http://sofloperformanceboats.com/sites/default/files/styles/boats_thumbnail/public/2016-01-21%2009.40.32.jpg?itok=yWpwjCbD",
+                "http://sofloperformanceboats.com/sites/default/files/styles/boats_thumbnail/public/392_Super_Fish.jpg?itok=pTIF6R0j",
+                "http://sofloperformanceboats.com/sites/default/files/styles/boats_thumbnail/public/4688883_20150121084153021_1_XLARGE.jpg?itok=yifTNXF0",
+                "http://sofloperformanceboats.com/sites/default/files/styles/boats_thumbnail/public/IMG_3544A_0.jpg?itok=58ZN7Awp"};
 
         for (int i = 0; i < boatArrayUrls.length; i++) {
             Boat b = new Boat();
