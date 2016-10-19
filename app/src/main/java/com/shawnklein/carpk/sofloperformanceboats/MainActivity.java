@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        new BoatLoader().execute();
         mBoats = BoatListing.get(this).getBoats();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

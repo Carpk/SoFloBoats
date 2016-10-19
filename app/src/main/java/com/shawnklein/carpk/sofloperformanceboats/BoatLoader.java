@@ -2,18 +2,16 @@ package com.shawnklein.carpk.sofloperformanceboats;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.util.RangeValueIterator;
 import android.os.AsyncTask;
-import android.widget.ImageView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-
 
 class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
     @Override
@@ -26,9 +24,10 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
                     .get();
             //parse("http://lulpix.com");
             if (doc != null) {
-                Elements elems = doc.getElementsByAttributeValue("class", "pic rounded-8");
+                Elements elems = doc.getElementsByAttributeValue("typeof", "foaf:Image");
+                System.out.println("ELEMENTS ARE " + elems.toString());
                 if (elems != null && !elems.isEmpty()) {
-                    RangeValueIterator.Element elem = elems.first();
+                    Element elem = elems.first();
                     elems = elem.getElementsByTag("img");
                     if (elems != null && !elems.isEmpty()) {
                         elem = elems.first();
@@ -37,6 +36,7 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
                             URL url = new URL(src);
                             // Just assuming that "src" isn't a relative URL is probably stupid.
                             InputStream is = url.openStream();
+
                             try {
                                 result = BitmapFactory.decodeStream(is);
                             } finally {
@@ -51,14 +51,16 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
         }
         return result;
     }
+
+
     @Override
     protected void onPostExecute(Bitmap result) {
-        ImageView lulz = (ImageView) findViewById(R.id.boat_image);
-        if (result != null) {
-            lulz.setImageBitmap(result);
-        } else {
-            //Your fallback drawable resource goes here
-            //lulz.setImageResource(R.drawable.nolulzwherehad);
-        }
+        //ImageView lulz = (ImageView) findViewById(R.id.boat_image);
+        //if (result != null) {
+        //    lulz.setImageBitmap(result);
+        //} else {
+        //    //Your fallback drawable resource goes here
+        //    //lulz.setImageResource(R.drawable.nolulzwherehad);
+       // }
     }
 }
