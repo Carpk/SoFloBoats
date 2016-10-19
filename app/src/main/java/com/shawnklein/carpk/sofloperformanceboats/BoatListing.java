@@ -24,6 +24,11 @@ public class BoatListing {
         }
     }
 
+    //public static void addBoat(Boat boat) {
+        // new BoatListing(boat);
+        //mBoats.add(boat);
+   // }
+
     public static BoatListing get(Context c) {
         if (sBoatListing == null) {
             sBoatListing = new BoatListing(c.getApplicationContext());
