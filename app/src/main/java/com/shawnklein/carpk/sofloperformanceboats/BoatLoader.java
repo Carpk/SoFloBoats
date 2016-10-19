@@ -32,7 +32,9 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
                     for(int i = 0; i < elems.size(); i = i + 2 ) {
                         Boat boat = new Boat();
                         Element elem = elems.get(i);
-                        boat.setUrl(elem.toString());
+                        elem = elem.getElementsByTag("img").first();
+                        String src = elem.attr("src");
+                        boat.setUrl(src);
                         //if (elem != null && !elems.isEmpty()) {
                         //    String src = elem.attr("src");
                         //    if (src != null) {
@@ -49,7 +51,8 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
                         //    }
                         //}
                         elem = elems.get(i+1);
-                        boat.setTitle(elem.toString());
+                        String  txt = elem.text();
+                        boat.setTitle(txt);
                         //elems = elem.getElementsByTag("img");
 
                         //Harbor.addBoat(boat);
