@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         new BoatLoader().execute();
         mBoats = BoatListing.get(this).getBoats();
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three

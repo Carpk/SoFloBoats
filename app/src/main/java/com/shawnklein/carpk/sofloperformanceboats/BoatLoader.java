@@ -3,6 +3,7 @@ package com.shawnklein.carpk.sofloperformanceboats;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,29 +23,41 @@ class BoatLoader extends AsyncTask<Void, Void, Bitmap> {
                     .referrer("http://www.google.com")
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .get();
-            //parse("http://lulpix.com");
-            if (doc != null) {
-                Elements elems = doc.getElementsByAttributeValue("typeof", "foaf:Image");
-                System.out.println("ELEMENTS ARE " + elems.toString());
-                if (elems != null && !elems.isEmpty()) {
-                    Element elem = elems.first();
-                    elems = elem.getElementsByTag("img");
-                    if (elems != null && !elems.isEmpty()) {
-                        elem = elems.first();
-                        String src = elem.attr("src");
-                        if (src != null) {
-                            URL url = new URL(src);
-                            // Just assuming that "src" isn't a relative URL is probably stupid.
-                            InputStream is = url.openStream();
 
-                            try {
-                                result = BitmapFactory.decodeStream(is);
-                            } finally {
-                                is.close();
-                            }
-                        }
+            if (doc != null) {
+                //Elements elems = doc.getElementsByAttributeValue("typeof", "foaf:Image");
+                Elements elems = doc.getElementsByAttributeValue("class", "field-content");
+
+                if (elems != null && !elems.isEmpty()) {
+                    for(int i = 0; i < elems.size(); i = i + 2 ) {
+                        Boat boat = new Boat();
+                        Element elem = elems.get(i);
+                        boat.setUrl(elem.toString());
+                        //if (elem != null && !elems.isEmpty()) {
+                        //    String src = elem.attr("src");
+                        //    if (src != null) {
+                        //        System.out.println(src);
+                        //        URL url = new URL(src);
+                        //        InputStream is = url.openStream();
+
+                        //        try {
+                        //            result = BitmapFactory.decodeStream(is);
+                        //            boat.setUrl(result);
+                        //        } finally {
+                        //            is.close();
+                        //        }
+                        //    }
+                        //}
+                        elem = elems.get(i+1);
+                        boat.setTitle(elem.toString());
+                        //elems = elem.getElementsByTag("img");
+
+                        //Harbor.addBoat(boat);
                     }
                 }
+
+
+
             }
         } catch (IOException e) {
             // Error handling goes here
