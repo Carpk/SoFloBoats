@@ -47,7 +47,7 @@ class BoatLoader extends AsyncTask<Void, Void, Harbor> {
                         try {
                             InputStream in = new java.net.URL(src).openStream();
                             mIcon11 = BitmapFactory.decodeStream(in);
-                            boat.setUrl(mIcon11);
+                            boat.setUrl(src);
                         } catch (Exception e) {
                             Log.e("Error", e.getMessage());
                             e.printStackTrace();
@@ -72,9 +72,7 @@ class BoatLoader extends AsyncTask<Void, Void, Harbor> {
 
     @Override
     protected void onPostExecute(Harbor result) {
-        ArrayList<Boat> array = result.getBoats();
-        Boat boat = array.get(0);
-        bmImage.setImageBitmap(boat.getUrl());
+
    }
 
 

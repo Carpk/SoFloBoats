@@ -28,18 +28,19 @@ public class BoatFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID boatId = (UUID)getArguments().getSerializable(EXTRA_BOAT_ID);
 
-        //mBoat = BoatListing.get(getActivity()).getBoat(boatId);
+        mBoat = Harbor.get(getActivity()).getBoat(boatId);
+        // mBoat = BoatListing.get(getActivity()).getBoat(boatId);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_boat, parent, false);
 
-        // mTitleField = (TextView)v.findViewById(R.id.boat_title);
-        // mTitleField.setText(mBoat.getTitle());
+        mTitleField = (TextView)v.findViewById(R.id.boat_title);
+        mTitleField.setText(mBoat.getTitle());
 
-        // new DownloadImageTask((ImageView)v.findViewById(R.id.boat_image)).execute(mBoat.getUrl());
-        new BoatLoader( (ImageView)v.findViewById(R.id.boat_image) ).execute();
+        new DownloadImageTask((ImageView)v.findViewById(R.id.boat_image)).execute(mBoat.getUrl());
+
         return v;
     }
 

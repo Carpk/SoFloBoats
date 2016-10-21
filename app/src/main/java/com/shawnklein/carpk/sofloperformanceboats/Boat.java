@@ -1,13 +1,11 @@
 package com.shawnklein.carpk.sofloperformanceboats;
 
-import android.graphics.Bitmap;
-
 import java.util.UUID;
 
 public class Boat {
     private UUID mId;
     private String mTitle;
-    private Bitmap mUrl;
+    private String mUrl;
 
     public UUID getId() {
         return mId;
@@ -25,11 +23,11 @@ public class Boat {
         mTitle = title;
     }
 
-    public Bitmap getUrl() {
+    public String getUrl() {
         return mUrl;
     }
 
-    public void setUrl(Bitmap url) {
+    public void setUrl(String url) {
         mUrl = url;
     }
 

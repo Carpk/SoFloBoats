@@ -19,7 +19,7 @@ public class BoatListing {
         for (int i = 0; i < boatArrayUrls.length; i++) {
             Boat b = new Boat();
             b.setTitle("Boat #" + i);
-            //b.setUrl(boatArrayUrls[i]);
+            b.setUrl(boatArrayUrls[i]);
             mBoats.add(b);
         }
     }

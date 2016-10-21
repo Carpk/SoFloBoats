@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //mBoats = BoatListing.get(this).getBoats();
+        mBoats = Harbor.get(this).getBoats();
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -83,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
             public void onPageScrolled(int pos, float posOffset, int posOffsetPixels) {}
 
             public void onPageSelected(int pos) {
-                //Boat boat = mBoats.get(pos);
-                //if (boat.getTitle() != null) {
-                //    setTitle(boat.getTitle());
-                //}
+                Boat boat = mBoats.get(pos);
+                if (boat.getTitle() != null) {
+                    setTitle(boat.getTitle());
+                }
             }
         });
 
@@ -145,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_boat, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.boat_title);
-            textView.setText("tacos");
+            // TextView textView = (TextView) rootView.findViewById(R.id.boat_title);
+            // textView.setText("tacos");
             return rootView;
         }
     }
