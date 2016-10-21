@@ -7,16 +7,14 @@
               android:layout_width="match_parent"
               app:layout_collapseParallaxMultiplier="1.0">
 
-    <TextView
-        android:id="@+id/boat_title"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="125dp"/>
 
     <ImageView
         android:id="@+id/boat_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:contentDescription="@string/this_is_a_boat"
         android:scaleType="fitStart"
         />

@@ -10,18 +10,24 @@
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
+        android:elevation="4dp"
+        android:logo="@drawable/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            android:logo="@drawable/logo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@android:color/background_light"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="@android:color/black">
+            app:titleTextColor="@android:color/black"
+            android:elevation="4dp">
 
         </android.support.v7.widget.Toolbar>
 
