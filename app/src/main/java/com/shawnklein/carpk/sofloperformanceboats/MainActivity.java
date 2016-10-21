@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getSupportActionBar().setElevation(0);
-
-        //mBoats = BoatListing.get(this).getBoats();
         mBoats = Harbor.get(this).getBoats();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

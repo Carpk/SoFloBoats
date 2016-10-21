@@ -29,7 +29,7 @@ public class BoatFragment extends Fragment {
         UUID boatId = (UUID)getArguments().getSerializable(EXTRA_BOAT_ID);
 
         mBoat = Harbor.get(getActivity()).getBoat(boatId);
-        // mBoat = BoatListing.get(getActivity()).getBoat(boatId);
+
     }
 
     @Override
