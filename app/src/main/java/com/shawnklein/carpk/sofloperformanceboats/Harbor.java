@@ -1,21 +1,12 @@
 package com.shawnklein.carpk.sofloperformanceboats;
 
-
-
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.ImageView;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.CancellationException;
@@ -28,9 +19,7 @@ public class Harbor {
     private Harbor(Context appContext) {
         mBoats = new ArrayList<Boat>();
         try {
-            System.out.println("ABOUT TO CALL GET ON BOATLOADER!!!!!");
             new BoatUrlLoader().execute().get();
-            System.out.println("FINISHED WITH BOATLOADER!!!!!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -45,7 +34,6 @@ public class Harbor {
             mBoats = new ArrayList<Boat>();
         }
         mBoats.add(boat);
-        System.out.println("THIS IS MY HARBOR: " + mBoats.size());
     }
 
     public static Harbor get(Context c) {
@@ -71,9 +59,7 @@ public class Harbor {
 
         @Override
         protected ArrayList<Boat> doInBackground(Void... args) {
-            System.out.println("ABOUT TO TRY!!!!!");
             try {
-                System.out.println("RUNNING JSOUP!!!!!");
                 Document doc = Jsoup.connect("http://sofloperformanceboats.com/boats")
                         .referrer("http://sofloperformanceboats.com")
                         .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")

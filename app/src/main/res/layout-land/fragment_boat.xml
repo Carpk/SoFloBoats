@@ -7,6 +7,11 @@
               app:layout_collapseParallaxMultiplier="1.0"
               android:weightSum="1">
 
+    <TextView
+        android:id="@+id/boat_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <ImageView
         android:id="@+id/boat_image"
         android:layout_width="match_parent"

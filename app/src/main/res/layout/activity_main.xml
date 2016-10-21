@@ -18,9 +18,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:background="@android:color/background_light"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@android:color/black">
 
         </android.support.v7.widget.Toolbar>
 
@@ -31,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@android:color/darker_gray"/>
+        android:background="@color/sunbathed_blue"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
