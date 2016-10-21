@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ImageView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,17 +13,23 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 
 class BoatLoader extends AsyncTask<Void, Void, Harbor> {
+    ImageView bmImage;
+
+    public BoatLoader(ImageView bmImage) {
+        this.bmImage = bmImage;
+    }
+
     @Override
     protected Harbor doInBackground(Void... args) {
-        Bitmap result = null;
-        Harbor harbor = new Harbor();
+        Bitmap bitmapResult = null;
+        Harbor harbor = null;
+
         try {
             Document doc = Jsoup.connect("http://sofloperformanceboats.com/boats")
-                    .referrer("http://www.google.com")
+                    .referrer("http://sofloperformanceboats.com")
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .get();
 
@@ -32,11 +39,19 @@ class BoatLoader extends AsyncTask<Void, Void, Harbor> {
                 if (elems != null && !elems.isEmpty()) {
                     for(int i = 0; i < elems.size(); i = i + 2 ) {
                         Boat boat = new Boat();
+                        Bitmap mIcon11 = null;
 
                         Element elem = elems.get(i);
                         elem = elem.getElementsByTag("img").first();
                         String src = elem.attr("src");
-                        boat.setUrl(src);
+                        try {
+                            InputStream in = new java.net.URL(src).openStream();
+                            mIcon11 = BitmapFactory.decodeStream(in);
+                            boat.setUrl(mIcon11);
+                        } catch (Exception e) {
+                            Log.e("Error", e.getMessage());
+                            e.printStackTrace();
+                        }
 
                         elem = elems.get(i+1);
                         String  txt = elem.text();
@@ -44,6 +59,7 @@ class BoatLoader extends AsyncTask<Void, Void, Harbor> {
 
                         harbor.addBoat(boat);
                     }
+
                 }
 
             }
@@ -56,12 +72,10 @@ class BoatLoader extends AsyncTask<Void, Void, Harbor> {
 
     @Override
     protected void onPostExecute(Harbor result) {
-        //ImageView lulz = (ImageView) findViewById(R.id.boat_image);
-        //if (result != null) {
-        //    lulz.setImageBitmap(result);
-        //} else {
-        //    //Your fallback drawable resource goes here
-        //    //lulz.setImageResource(R.drawable.nolulzwherehad);
-       // }
+        ArrayList<Boat> array = result.getBoats();
+        Boat boat = array.get(0);
+        bmImage.setImageBitmap(boat.getUrl());
    }
+
+
 }

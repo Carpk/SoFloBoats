@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Harbor harbor = new BoatLoader().execute();
-        mBoats = BoatListing.get(this).getBoats();
+
+        //mBoats = BoatListing.get(this).getBoats();
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
             public void onPageScrolled(int pos, float posOffset, int posOffsetPixels) {}
 
             public void onPageSelected(int pos) {
-                Boat boat = mBoats.get(pos);
-                if (boat.getTitle() != null) {
-                    setTitle(boat.getTitle());
-                }
+                //Boat boat = mBoats.get(pos);
+                //if (boat.getTitle() != null) {
+                //    setTitle(boat.getTitle());
+                //}
             }
         });
 

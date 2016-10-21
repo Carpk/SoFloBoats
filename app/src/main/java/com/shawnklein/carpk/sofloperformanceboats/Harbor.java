@@ -19,6 +19,4 @@ public class Harbor {
     public ArrayList<Boat> getBoats() {
         return mBoats;
     }
-
-
 }

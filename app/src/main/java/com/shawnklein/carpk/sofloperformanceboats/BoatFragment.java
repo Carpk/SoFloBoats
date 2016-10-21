@@ -18,28 +18,28 @@ import java.io.InputStream;
 import java.util.UUID;
 
 public class BoatFragment extends Fragment {
-    public static String EXTRA_BOAT_ID =
-            "net.shawnklein.android.sofloperformanceboats.boat_id";
+    public static String EXTRA_BOAT_ID = "net.shawnklein.android.sofloperformanceboats.boat_id";
     private Boat mBoat;
     private TextView mTitleField;
     private ImageView mImage;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UUID boatId = (UUID)getArguments().getSerializable(EXTRA_BOAT_ID);
 
-        mBoat = BoatListing.get(getActivity()).getBoat(boatId);
+        //mBoat = BoatListing.get(getActivity()).getBoat(boatId);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_boat, parent, false);
 
-        mTitleField = (TextView)v.findViewById(R.id.boat_title);
+        // mTitleField = (TextView)v.findViewById(R.id.boat_title);
         // mTitleField.setText(mBoat.getTitle());
 
-        new DownloadImageTask((ImageView)v.findViewById(R.id.boat_image)).execute(mBoat.getUrl());
-
+        // new DownloadImageTask((ImageView)v.findViewById(R.id.boat_image)).execute(mBoat.getUrl());
+        new BoatLoader( (ImageView)v.findViewById(R.id.boat_image) ).execute();
         return v;
     }
 

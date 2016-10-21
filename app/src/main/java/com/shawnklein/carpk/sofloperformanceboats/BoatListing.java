@@ -19,15 +19,11 @@ public class BoatListing {
         for (int i = 0; i < boatArrayUrls.length; i++) {
             Boat b = new Boat();
             b.setTitle("Boat #" + i);
-            b.setUrl(boatArrayUrls[i]);
+            //b.setUrl(boatArrayUrls[i]);
             mBoats.add(b);
         }
     }
 
-    //public static void addBoat(Boat boat) {
-        // new BoatListing(boat);
-        //mBoats.add(boat);
-   // }
 
     public static BoatListing get(Context c) {
         if (sBoatListing == null) {
