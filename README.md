@@ -1,6 +1,6 @@
-### SoFloBoats
+### SoFlo Performance Boats
 
-Android app shows different boat models.
+Android app shows different model boats from NorTech.
 
 #### How it works
 
