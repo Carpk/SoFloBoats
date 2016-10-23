@@ -4,8 +4,7 @@ Android app shows different model boats from NorTech.
 
 #### How it works
 
-App is set to query a /boats index page, uses Jsoup to parse the returning HTML for boat names and additional picture URLs. Once our Boat objects are created, we use FragmentPagerAdapter and Fragments to show these boats.
-
+App is set to query a /boats index page, uses Jsoup to parse the returning HTML for boat names and additional picture URLs. Once our Boat objects are created, we use FragmentStatePagerAdapter to manage boat Fragments.
 
 #### Screenshots
 
