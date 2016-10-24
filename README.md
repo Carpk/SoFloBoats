@@ -8,6 +8,6 @@ App is set to query a /boats index page, uses Jsoup to parse the returning HTML 
 
 #### Screenshots
 
-![Image of one of the boats in landing view](https://raw.githubusercontent.com/Carpk/SoFloBoats/master/sampleImages/390NorTech.jpg)
+![Image of one of the boats in landing view](https://raw.githubusercontent.com/Carpk/SoFloBoats/master/sampleImages/NorTech2016.jpg)
 
-![Image of a second boat in landing view](https://raw.githubusercontent.com/Carpk/SoFloBoats/master/sampleImages/392NorTech.jpg)
+![Image of a second boat in landing view](https://raw.githubusercontent.com/Carpk/SoFloBoats/master/sampleImages/NorTech2015.jpg)
